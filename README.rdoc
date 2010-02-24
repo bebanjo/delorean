@@ -1,0 +1,31 @@
+= Delorean
+
+Delorean let you time-travel with Ruby by mocking <code>Time.now</code>
+
+== Install
+
+  $ [sudo] gem install delorean
+
+== Usage
+
+  # Time.now => Wed Feb 24 00:33:09 +0100 2010
+  Delorean.time_travel_to "1 month ago" 
+  # Time.now => Sun Jan 24 00:33:09 +0100 2010
+  Delorean.back_to_the_present
+  # Time.now => Wed Feb 24 00:33:09 +0100 2010
+  
+  Delorean.time_travel_to("1 month ago") do 
+    # Inside the block: 
+    # Time.now => Sun Jan 24 00:34:32 +0100 2010
+    sleep(5)
+    # And the time still goes on... Time.now => Sun Jan 24 00:34:37 +0100 2010
+  end
+  # Outside the block: 
+  # Time.now => Wed Feb 24 00:34:35 +0100 2010
+  
+  # Time.now => Wed Feb 24 00:34:04 +0100 2010
+  Delorean.jump 30
+  # Time.now => Wed Feb 24 00:34:34 +0100 2010
+  
+Copyright (c) 2010 Luismi Cavallé, Sergio Gil and BeBanjo S.L. released under the MIT license
+  
