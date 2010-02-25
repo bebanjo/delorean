@@ -61,6 +61,10 @@ Now you can time-travel in your examples, like this:
     
   end
   
+Don't forget to go back to the present after each example:
+
+  after(:each) { back_to_the_present }
+  
 == Credits
 
 Delorean image based on an original[http://www.gocarlo.com/lagalerie/archives/march05.htm] by {Giancarlo Pitocco}[http://www.gocarlo.com/]
