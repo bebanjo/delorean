@@ -28,7 +28,7 @@ spec = Gem::Specification.new do |s|
 
   s.has_rdoc          = true
   s.extra_rdoc_files  = %w(README.rdoc)
-  s.rdoc_options      = %w(--main README.rdoc)
+  s.rdoc_options      = %w(--main README.rdoc --charset=UTF-8)
 
   s.files             = %w() + Dir.glob("{spec,lib/**/*}")
   s.require_paths     = ["lib"]
