@@ -20,8 +20,8 @@ task :default => ["spec"]
 spec = Gem::Specification.new do |s|
 
   s.name              = "delorean"
-  s.version           = "0.1.0"
-  s.summary           = "Time-travel in Ruby"
+  s.version           = "0.1.1"
+  s.summary           = "Delorean lets you travel in time with Ruby by mocking Time.now"
   s.authors           = ["Luismi Cavallé", "Sergio Gil"]
   s.email             = "ballsbreaking@bebanjo.com"
   s.homepage          = "http://github.com/bebanjo/delorean"
