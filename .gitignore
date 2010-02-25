@@ -1,2 +1,3 @@
 delorean.gemspec
 pkg/*
+rdoc/*
