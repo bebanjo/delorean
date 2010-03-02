@@ -44,7 +44,7 @@ Time-travelling can be extremely useful when you're testing your application.
 For example, in RSpec you may find convenient to include Delorean's DSL in your <tt>spec_helper.rb</tt>:
 
   Spec::Runner.configure do |config|
-    include Delorean
+    config.include Delorean
     ...
     
 Now you can time-travel in your examples, like this:
