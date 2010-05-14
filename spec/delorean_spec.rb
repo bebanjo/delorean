@@ -27,6 +27,13 @@ describe Delorean do
       Delorean.time_travel_to "2 minutes from now"
       Time.now.should be_close(two_minutes_from_now, 1)
     end
+
+    it "should travel to string times with options" do
+      two_days_ago = 2.days.ago
+      yesterday = Chronic.parse '1 day ago'
+      Delorean.time_travel_to "1 day ago", :now => yesterday
+      Time.now.should be_close(two_days_ago, 1)
+    end
   end
   
   describe "back_to_the_present" do
@@ -86,6 +93,14 @@ describe Delorean do
       two_minutes_ago = Time.now - 120
       Delorean.time_travel_to("2 minutes ago") do
         Time.now.should be_close(two_minutes_ago, 1)
+      end
+    end
+
+    it "should travel to string times with options" do
+      two_days_ago = 2.days.ago
+      yesterday = Chronic.parse '1 day ago'
+      Delorean.time_travel_to("1 day ago", :now => yesterday) do
+        Time.now.should be_close(two_days_ago, 1)
       end
     end
   end

@@ -3,8 +3,8 @@ require 'chronic'
 module Delorean
   extend self
     
-  def time_travel_to(time)
-    mock_current_time(time)
+  def time_travel_to(time, options={})
+    mock_current_time(time, options)
     return unless block_given?
     begin
       yield
@@ -35,8 +35,8 @@ module Delorean
     @@time_travel_offsets = []
   end
   
-  def mock_current_time(time)
-    time = Chronic.parse(time) if time.is_a?(String)
+  def mock_current_time(time, options={})
+    time = Chronic.parse(time, options) if time.is_a?(String)
     time = Time.local(time.year, time.month, time.day) if time.is_a?(Date)
     
     time_travel_offsets.push Time.now - time
