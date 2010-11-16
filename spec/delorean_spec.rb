@@ -34,6 +34,13 @@ describe Delorean do
       Delorean.time_travel_to "1 day ago", :now => yesterday
       Time.now.should be_close(two_days_ago, 1)
     end
+
+    it "should return the final value of the block given" do
+      Delorean.time_travel_to(Date.new(1955,11,12)) do
+        'You\'re safe and sound now'
+        'Back in good old 1955.'
+      end.should eql 'Back in good old 1955.'
+    end
   end
   
   describe "back_to_the_present" do
