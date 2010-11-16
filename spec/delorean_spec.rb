@@ -1,5 +1,5 @@
 require 'rubygems'
-require 'active_support'
+require 'active_support/all'
 require File.dirname(__FILE__) + "/../lib/delorean"
 
 describe Delorean do

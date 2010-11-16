@@ -35,8 +35,8 @@ spec = Gem::Specification.new do |s|
 
   s.add_dependency("chronic")
 
-  s.add_development_dependency("rspec")
-  s.add_development_dependency("active_support")
+  s.add_development_dependency("rspec", "~>1.3.0")
+  s.add_development_dependency("activesupport", "~>2.3.0")
 end
 
 # This task actually builds the gem. We also regenerate a static
