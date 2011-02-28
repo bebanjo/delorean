@@ -16,6 +16,5 @@ PLATFORMS
 
 DEPENDENCIES
   activesupport (~> 2.3.0)
-  chronic
   delorean!
   rspec (~> 1.3.0)
