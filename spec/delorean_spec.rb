@@ -41,6 +41,13 @@ describe Delorean do
         'Back in good old 1955.'
       end.should eql 'Back in good old 1955.'
     end
+    
+    it "should work with DateTime" do
+      datetime = DateTime.strptime("2011-05-25 18:00", "%Y-%m-%d %H:%M")
+      Delorean.time_travel_to(datetime) do
+        Time.now.should be_close(datetime, 1)
+      end
+    end
   end
 
   describe "back_to_the_present" do

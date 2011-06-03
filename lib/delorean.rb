@@ -38,7 +38,7 @@ module Delorean
 
   def mock_current_time(time, options={})
     time = Chronic.parse(time, options) if time.is_a?(String)
-    time = Time.local(time.year, time.month, time.day) if time.is_a?(Date)
+    time = Time.local(time.year, time.month, time.day) if time.is_a?(Date) && !time.is_a?(DateTime)
 
     time_travel_offsets.push Time.now - time
   end
