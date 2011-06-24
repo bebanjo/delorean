@@ -125,5 +125,13 @@ describe Delorean do
       Delorean.jump 60
       Time.now.should be_close(expected, 1)
     end
+
+    it "should return the final value of the block given" do
+      to_the_future = Date.new(2015,10,21).to_time - Time.now
+      Delorean.jump(to_the_future) do
+        'You\'re safe and sound now'
+        'Marti, I need to your help to save your future children'
+      end.should eql 'Marti, I need to your help to save your future children'
+    end
   end
 end
