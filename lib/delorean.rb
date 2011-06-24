@@ -20,6 +20,12 @@ module Delorean
 
   def jump(seconds)
     mock_current_time Time.now + seconds
+    return unless block_given?
+    begin
+      yield
+    ensure
+      restore_previous_time
+    end
   end
 
   def now
