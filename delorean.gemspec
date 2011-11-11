@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |gem|
   gem.name = "delorean"
-  gem.version = "1.1.0"
+  gem.version = "1.1.1"
   gem.date  = Date.today.to_s
 
   gem.summary = "Delorean lets you travel in time with Ruby by mocking Time.now"
@@ -11,8 +11,8 @@ Gem::Specification.new do |gem|
   gem.email = "ballsbreaking@bebanjo.com"
   gem.homepage = "http://github.com/bebanjo/delorean"
 
-  gem.extra_rdoc_files = ["README.rdoc"]
-  gem.files = ["lib/delorean.rb", "README.rdoc", "MIT-LICENSE"]
+  gem.extra_rdoc_files = ["README.md"]
+  gem.files = ["lib/delorean.rb", "README.md", "MIT-LICENSE"]
   
   gem.add_runtime_dependency 'chronic', '>= 0'
   
