@@ -57,6 +57,13 @@ describe Delorean do
         Time.now.should be_close(datetime, 1)
       end
     end
+
+    it "should change the result of DateTime" do
+      datetime = DateTime.strptime("2011-05-25 18:00", "%Y-%m-%d %H:%M")
+      Delorean.time_travel_to(datetime) do
+        DateTime.now.should be_close(datetime, 1)
+      end
+    end
   end
 
   describe "back_to_the_present" do
