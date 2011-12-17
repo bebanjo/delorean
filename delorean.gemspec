@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |gem|
   gem.name = "delorean"
-  gem.version = "1.1.1"
+  gem.version = "1.2.0"
   gem.date  = Date.today.to_s
 
   gem.summary = "Delorean lets you travel in time with Ruby by mocking Time.now"

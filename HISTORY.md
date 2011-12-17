@@ -1,5 +1,9 @@
 # Delorean changelog
 
+## Version 1.2.0 (2011-12-17)
+
+* Support for DateTime (by tomykaira)
+
 ## Version 1.1.1 (2011-11-11)
 
 * Fixes for Ruby 1.9.3 (by Otto Hilska)
