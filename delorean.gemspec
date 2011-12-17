@@ -15,8 +15,4 @@ Gem::Specification.new do |gem|
   gem.files = ["lib/delorean.rb", "README.md", "MIT-LICENSE"]
   
   gem.add_runtime_dependency 'chronic', '>= 0'
-  
-  gem.add_development_dependency 'rspec', '~> 1.3.0'
-  gem.add_development_dependency 'activesupport', '~> 2.3.0'
-  gem.add_development_dependency 'rake'
 end
