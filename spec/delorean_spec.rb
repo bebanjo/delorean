@@ -4,6 +4,15 @@ require File.expand_path("../lib/delorean", File.dirname(__FILE__))
 
 describe Delorean do
 
+  before(:all) do
+    @default_tz = ENV['TZ']
+    ENV['TZ'] = 'UTC'
+  end
+
+  after(:all) do
+    ENV['TZ'] = @default_tz
+  end
+
   after(:each) do
     Delorean.back_to_the_present
   end
