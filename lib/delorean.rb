@@ -68,4 +68,12 @@ if RUBY_VERSION >= "1.9.3"
       Date.civil(t.year, t.mon, t.mday)
     end
   end
+
+  class << DateTime
+    alias_method :now_without_delorean, :now
+
+    def now(sg=Date::ITALY)
+      Time.now.to_datetime
+    end
+  end
 end
