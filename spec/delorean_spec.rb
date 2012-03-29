@@ -21,7 +21,7 @@ describe Delorean do
     it "should travel through time" do
       past_date = Time.utc(2009,1,1,10,30)
       Delorean.time_travel_to past_date
-      Time.now.should be_close(past_date, 1)
+      Time.now.should be_within(1, past_date)
     end
 
     it "should travel through time several times" do
@@ -34,14 +34,14 @@ describe Delorean do
     it "should travel to string times" do
       two_minutes_from_now = Time.now + 120
       Delorean.time_travel_to "2 minutes from now"
-      Time.now.should be_close(two_minutes_from_now, 1)
+      Time.now.should be_within(1, two_minutes_from_now)
     end
 
     it "should travel to string times with options" do
       two_days_ago = 2.days.ago
       yesterday = Chronic.parse '1 day ago'
       Delorean.time_travel_to "1 day ago", :now => yesterday
-      Time.now.should be_close(two_days_ago, 1)
+      Time.now.should be_within(1, two_days_ago)
     end
 
     it "should return the final value of the block given" do
@@ -54,14 +54,14 @@ describe Delorean do
     it "should work with DateTime" do
       datetime = DateTime.strptime("2011-05-25 18:00", "%Y-%m-%d %H:%M")
       Delorean.time_travel_to(datetime) do
-        Time.now.should be_close(datetime, 1)
+        Time.now.should be_within(1, datetime)
       end
     end
 
     it "should change the result of DateTime" do
       datetime = DateTime.strptime("2011-05-25 18:00", "%Y-%m-%d %H:%M")
       Delorean.time_travel_to(datetime) do
-        DateTime.now.should be_close(datetime, 1)
+        DateTime.now.should be_within(1, datetime)
       end
     end
   end
@@ -92,7 +92,7 @@ describe Delorean do
     it "should travel through time" do
       past_date = Time.utc(2009,1,1,10,30)
       Delorean.time_travel_to(past_date) do
-        Time.now.should be_close(past_date, 1)
+        Time.now.should be_within(1, past_date)
       end
     end
 
@@ -122,7 +122,7 @@ describe Delorean do
     it "should travel to string times" do
       two_minutes_ago = Time.now - 120
       Delorean.time_travel_to("2 minutes ago") do
-        Time.now.should be_close(two_minutes_ago, 1)
+        Time.now.should be_within(1, two_minutes_ago)
       end
     end
 
@@ -130,7 +130,7 @@ describe Delorean do
       two_days_ago = 2.days.ago
       yesterday = Chronic.parse '1 day ago'
       Delorean.time_travel_to("1 day ago", :now => yesterday) do
-        Time.now.should be_close(two_days_ago, 1)
+        Time.now.should be_within(1, two_days_ago)
       end
     end
   end
@@ -139,7 +139,7 @@ describe Delorean do
     it "should jump the given number of seconds to the future" do
       expected = Time.now + 60
       Delorean.jump 60
-      Time.now.should be_close(expected, 1)
+      Time.now.should be_within(1, expected)
     end
 
     it "should return the final value of the block given" do
@@ -151,3 +151,4 @@ describe Delorean do
     end
   end
 end
+
