@@ -2,7 +2,7 @@ rvm:
   - 1.8.7
   - 1.9.2
   - 1.9.3
-gemfiles:
+gemfile:
   - gemfiles/Gemfile.2.3.x
   - gemfiles/Gemfile.3.0.x
   - gemfiles/Gemfile.3.1.x
