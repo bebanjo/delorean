@@ -149,5 +149,17 @@ describe Delorean do
         'Marti, I need to your help to save your future children'
       end.should eql 'Marti, I need to your help to save your future children'
     end
+
+    it "should jump to future using rails date helpers" do
+      expected = Time.now + 60
+      Delorean.jump 1.minute
+      Time.now.should be_close(expected, 1)
+    end
+
+    it "should jump to future using rails date helpers" do
+      expected = Time.now + 3600
+      Delorean.jump 1.hour
+      Time.now.should be_close(expected, 1)
+    end
   end
 end
