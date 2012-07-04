@@ -16,7 +16,7 @@ Gem::Specification.new do |gem|
   
   gem.add_runtime_dependency 'chronic', '>= 0'
   
-  gem.add_development_dependency 'rspec', '~> 1.3.0'
-  gem.add_development_dependency 'activesupport', '~> 2.3.0'
+  gem.add_development_dependency 'rspec', '~> 2.9.0'
+  gem.add_development_dependency 'activesupport', '> 2.3.0'
   gem.add_development_dependency 'rake'
 end
