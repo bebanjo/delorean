@@ -1,5 +1,10 @@
 # Delorean changelog
 
+## Version 2.0.0 (2012-07-04)
+
+* Update dependencies, get rid of deprecations, test against different versions of activesupport (by brain-geek and jwo)
+* Added flux capacitor (by nashby)
+
 ## Version 1.2.0 (2011-12-17)
 
 * Support for DateTime (by tomykaira)
