@@ -25,8 +25,7 @@ if RUBY_VERSION >= "1.9.3"
     alias_method :now_without_delorean, :now
 
     def now(sg=Date::ITALY)
-      format = '%Q'
-      self.strptime( Time.now.to_datetime.strftime(format), format, sg )
+      self.iso8601( Time.now.to_datetime.iso8601, sg )
     end
   end
 end
