@@ -76,5 +76,5 @@ or its alternate syntax:
 
 Delorean image based on [an original](http://www.gocarlo.com/lagalerie/archives/march05.htm) by [Giancarlo Pitocco](http://www.gocarlo.com/).
 
-Copyright (c) 2010-2011 Luismi Cavallé, Sergio Gil and BeBanjo S.L. released under the MIT license
+Copyright (c) 2012 Luismi Cavallé, Sergio Gil and BeBanjo S.L. released under the MIT license
 
