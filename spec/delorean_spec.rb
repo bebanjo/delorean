@@ -66,6 +66,41 @@ describe Delorean do
     end
   end
 
+  describe 'subclasses' do
+    describe 'of Time' do
+      let( :time_klass ){ Class.new(Time) }
+      it 'should change the result of time_klass.now' do
+        past_date = Date.new(1955,11,12)
+        Delorean.time_travel_to( past_date ) do
+          time_klass.now.should be_an_instance_of time_klass
+          time_klass.now.strftime('%F').should == past_date.strftime('%F') 
+        end
+      end
+    end
+
+    describe 'of Date' do
+      let( :date_klass ){ Class.new(Date) }
+      it 'should change the result of date_klass.now' do
+        past_date = Date.new(1955,11,12)
+        Delorean.time_travel_to( past_date ) do
+          date_klass.today.should be_an_instance_of date_klass
+          date_klass.today.strftime('%F').should == past_date.strftime('%F') 
+        end
+      end
+    end
+
+    describe 'of DateTime' do
+      let( :datetime_klass ){ Class.new(DateTime) }
+      it 'should change the result of datetime_klass.now' do
+        past_date = Date.new(1955,11,12)
+        Delorean.time_travel_to( past_date ) do
+          datetime_klass.now.should be_an_instance_of datetime_klass
+          datetime_klass.now.strftime('%F').should == past_date.strftime('%F') 
+        end
+      end
+    end
+  end
+
   describe "back_to_the_present" do
     it "should stay in the present if in the present" do
       today = Date.today
