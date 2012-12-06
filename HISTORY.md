@@ -1,5 +1,9 @@
 # Delorean changelog
 
+## Version 2.1.0 (2012-12-06)
+
+* Support subclasses of Date, Time, and DateTime (by yaauie) [#18](https://github.com/bebanjo/delorean/pull/18) 
+
 ## Version 2.0.0 (2012-07-04)
 
 * Update dependencies, get rid of deprecations, test against different versions of activesupport (by brain-geek and jwo)
