@@ -1,4 +1,11 @@
-require 'rubygems'
+if ENV['CI']
+  require 'coveralls'
+  Coveralls.wear!
+else
+  require 'simplecov'
+  SimpleCov.start 'rails'
+end
+
 require 'active_support/all'
 require File.expand_path("../lib/delorean", File.dirname(__FILE__))
 
