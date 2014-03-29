@@ -4,3 +4,4 @@ rdoc/*
 .bundle/*
 .bin
 *.swp
+gemfiles/*.lock

@@ -1,5 +1,5 @@
 source 'http://rubygems.org'
 gemspec :path => '..'
 
-gem 'activesupport', '~>3.1.0'
+gem 'activesupport', '~>4.0.0'
 gem 'i18n'
