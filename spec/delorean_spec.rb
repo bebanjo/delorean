@@ -19,7 +19,7 @@ describe Delorean do
 
   it "preserves milliseconds" do
     datetime_with_milliseconds = DateTime.now.strftime('%L')
-    expect( -> {
+    expect( lambda {
       Timeout::timeout(1) do
         while DateTime.now.strftime('%L') == datetime_with_milliseconds do; ; end;
       end
