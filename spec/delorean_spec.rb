@@ -1,4 +1,4 @@
-if ENV['CI']
+if ENV['CI'] && defined?(Coveralls)
   require 'coveralls'
   Coveralls.wear!
 else
@@ -30,7 +30,7 @@ describe Delorean do
       Timeout::timeout(1) do
         while DateTime.now.strftime('%L') == datetime_with_milliseconds do; ; end;
       end
-    }).to_not raise_error Timeout::Error
+    }).to_not raise_error
   end
 
   describe "time_travel_to" do
