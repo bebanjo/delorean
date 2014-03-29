@@ -17,7 +17,7 @@ if RUBY_VERSION >= "1.9.3"
 
     def today(sg=Date::ITALY)
       t = Time.now
-      self.civil(t.year, t.mon, t.mday, sg )
+      self.civil(t.year, t.mon, t.mday, sg)
     end
   end
 
@@ -25,7 +25,7 @@ if RUBY_VERSION >= "1.9.3"
     alias_method :now_without_delorean, :now
 
     def now(sg=Date::ITALY)
-      self.iso8601( Time.now.to_datetime.iso8601, sg )
+      self.iso8601(Time.now.to_datetime.iso8601(3), sg)
     end
   end
 end
