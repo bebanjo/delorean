@@ -44,7 +44,7 @@ You can also `jump` which is like `sleep` but without losing time
 
 Time-travelling can be extremely useful when you're testing your application.
 
-For example, in RSpec you may find convenient to include Delorean's DSL in your `spec_helper.rb`:
+For example, in RSpec you may find it convenient to include Delorean's DSL in your `spec_helper.rb`:
 
     RSpec.configure do |config|
       config.include Delorean
