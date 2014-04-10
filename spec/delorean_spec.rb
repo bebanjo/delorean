@@ -1,6 +1,8 @@
 require 'rubygems'
 require 'active_support/all'
+
 require File.expand_path("../lib/delorean", File.dirname(__FILE__))
+
 
 describe Delorean do
 
@@ -197,5 +199,46 @@ describe Delorean do
       Time.now.should be_within(1).of(expected)
     end
   end
+  describe "freeze_time" do
+    it "should freeze the time to now" do
+      expected = Delorean.freeze_time
+      sleep 0.01 
+      Time.now.should be_within(0.01).of(expected)
+      Time.now_without_delorean.should_not be_within(0.01).of(expected)
+    end
+
+    it "should freeze the time to given date" do
+      a_year_ago = Chronic.parse "1 year ago"
+      Delorean.freeze_time a_year_ago
+      sleep 0.01 
+      expected = a_year_ago
+      Time.now.should be_within(0.01).of(expected)
+      Time.now_without_delorean.should_not be_within(0.01).of(expected)
+    end
+    it "should unfreeze on new time travel" do
+      a_year_ago = Chronic.parse "1 year ago"
+      Delorean.freeze_time a_year_ago
+      Delorean.jump 12
+      expected = Time.now
+      sleep 0.01
+      Time.now.should be_within(13).of(a_year_ago)
+      Time.now.should_not be_within(0.01).of(expected)
+      Delorean.freeze_time
+      Delorean.time_travel_to a_year_ago
+      expected = Time.now
+      sleep 0.01
+      Time.now.should_not be_within(0.01).of(expected)
+    end
+
+    it "should back_to_the_present after freezen" do
+      expected = Time.now
+      a_year_ago = Chronic.parse "1 year ago"
+      Delorean.freeze_time a_year_ago
+      Delorean.back_to_the_present
+      Time.now.should be_within(1).of(expected)
+    end
+
+  end
 end
+
 
