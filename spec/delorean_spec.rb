@@ -215,6 +215,7 @@ describe Delorean do
       Time.now.should be_within(0.01).of(expected)
       Time.now_without_delorean.should_not be_within(0.01).of(expected)
     end
+    
     it "should unfreeze on new time travel" do
       a_year_ago = Chronic.parse "1 year ago"
       Delorean.freeze_time a_year_ago
