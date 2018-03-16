@@ -1,3 +1,7 @@
+# Discontinued
+
+This repo is not longer maintained
+
 # Delorean [![Build Status](https://secure.travis-ci.org/bebanjo/delorean.png)](http://travis-ci.org/bebanjo/delorean)
 
 Delorean lets you travel in time with Ruby by mocking `Time.now`
