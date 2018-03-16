@@ -2,7 +2,7 @@
 
 Delorean lets you travel in time with Ruby by mocking `Time.now`
 
-![](http://dl.dropbox.com/u/645329/delorean.png)
+![](./media/delorean.png)
 
 > Marty:: Wait a minute, Doc. Ah... Are you telling me that you built a time machine... out of a DeLorean?
 >
