@@ -25,7 +25,7 @@ if RUBY_VERSION >= "1.9.3"
     alias_method :now_without_delorean, :now
 
     def now(sg=Date::ITALY)
-      self.iso8601( Time.now.to_datetime.iso8601, sg )
+      self.iso8601( Time.now.to_datetime.iso8601(3), sg )
     end
   end
 end
